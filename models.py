@@ -48,7 +48,7 @@ def delete_expense(expense_id):
         print("Error: Expense with ID {} not found".format(expense_id))
         return False
 
-    data["expenses"] == updated_expenses
+    data["expenses"] = updated_expenses
     if save_data(data):
         print("Expense deleted successfully")
         return True

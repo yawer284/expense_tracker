@@ -16,7 +16,8 @@ def load_data():
         if "expenses" not in data:
             data["expenses"] = []
         if "budgets" not in data:
-            data["budgets"] = {}  
+            data["budgets"] = {}
+        return data  
     except (json.JSONDecodeError, PermissionError):
         return default_data
 

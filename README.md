@@ -1,15 +1,59 @@
-# Expense_Tracker
-this is CLI application that allow you to add, delete, update, show list of the expenses, get the total summary or the summary of a specific month of your expenses to a json file so you can save it, and give you a monthly report about your total expense
+# Expense Tracker CLI
+
+A command-line application to manage your personal finances.
+Track expenses by category, set monthly budgets, and export 
+your data to CSV.
 
 ---
+
+## Features
+- Add, update, and delete expenses
+- Categorize expenses and filter by category
+- View total or monthly expense summaries
+- Set a monthly budget with overspending warnings
+- Export expenses to CSV
+
+---
+
+## Installation
+
+git clone https://github.com/yawer284/expense-tracker
+cd expense-tracker
+pip install -e .
+
+---
+
+## Usage
+
+expense-tracker add --description "Lunch" --amount 20 --category "Food"
+# Expense added successfully (ID: 1)
+
+expense-tracker list
+# ID   Date         Description   Amount   Category
+# 1    2024-08-06   Lunch         $20.0    Food
+
+expense-tracker summary
+# Total expenses: $20.0
+
+expense-tracker summary --month 8
+# Total expenses for August: $20.0
+
+expense-tracker delete --id 1
+# Expense deleted successfully
+
+---
+
 ## Project Structure
-* 'storage.py' - handle json file I/O and data validation
+
+expense-tracker/
+├── main.py       # CLI commands (argparse)
+├── models.py     # Core logic (add, delete, update, summary)
+├── storage.py    # JSON file I/O and validation
+└── setup.py      # Package setup for the expense-tracker command
 
 ---
-## Modules
 
-### Storage Module
-responsible for saving and loading data and handling errors
-
-### models Module
-this one have 5 functions in it to (add, delete, update, show list, show summary) from the json file
+## Tech Stack
+- Python 3
+- argparse
+- JSON for data storage
